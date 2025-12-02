@@ -7,7 +7,10 @@ def check_p1(n: int) -> int:
     return 0
 
 def check_p2(n: int) -> int:
-    if re.fullmatch(r'(.+)\1+', str(n)):
+    # if re.fullmatch(r'(.+)\1+', str(n)):
+    #     return n
+    s = str(n)
+    if s in (s + s)[1:-1]:
         return n
     return 0
 
