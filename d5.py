@@ -22,17 +22,20 @@ for i in range(len(lines)):
     N, M = map(int, lines[i].split("-"))
     ranges.append((N, M))
 
-# for j in range(i + 1, len(lines)):
-#     queries.append(int(lines[j]))
+for j in range(i + 1, len(lines)):
+    queries.append(int(lines[j]))
 
 final_ranges = collapse_range(ranges)
 cnt = 0
+
+# p1
 # for q in queries:
 #     for start, end in final_ranges:
 #         if start <= q <= end:
 #             cnt += 1
 #             break
 
+# p2
 for start, end in final_ranges:
     cnt += end - start + 1
 
