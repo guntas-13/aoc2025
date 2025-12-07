@@ -17,6 +17,7 @@ res = 0
 #             ans += int(elts[j][i])
 #     res += ans
 
+# p2
 for row in range(len(lines[0])):
     build = ""
     for col in range(len(lines)):
