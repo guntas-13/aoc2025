@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+
 @dataclass
 class HorizontalLine:
     y: int
@@ -20,6 +21,7 @@ class VerticalLine:
         self.x = r1[0]
         self.y1 = min(r1[1], r2[1])
         self.y2 = max(r1[1], r2[1])
+
 @dataclass
 class Box:
     x: int
