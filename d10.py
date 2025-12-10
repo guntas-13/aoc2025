@@ -35,12 +35,16 @@ for entity in entities:
 
 def bfs(button_masks: list, pattern: int) -> int:
     q = deque([(btn_mask, 1) for btn_mask in button_masks])
+    visited = set()
     while q:
         bmask, depth = q.popleft()
         if bmask == pattern:
             return depth
         for next_bmask in button_masks:
-            q.append((next_bmask ^ bmask, depth + 1))
+            node = next_bmask ^ bmask
+            if node not in visited:
+                visited.add(node)
+                q.append((node, depth + 1))
     return -1
 
 total = 0
